@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body id="body">
+    <header class="bg-white border-b border-gray-100">
+        <nav class="py-4 px-5 mx-auto h-[62px] flex items-center justify-between">
+
+            <div class="flex items-center gap-2">
+                <h1 class="font-bold text-xl">WakeLab</h1>
+            </div>
+            <!-- 
+#ABC6E7
+        #FFF2B2
+        #FFF7D6 -->
+
+            <div class=" px-4 py-2 rounded-lg border-2 border-[#ABC6E7]">
+                <div class="flex items-center justify-between gap-4">
+
+                    <p id="name" class="text-base ">Aicha Jalloul</p>
+
+                    <svg id="modifi" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                        class="size-4 text-[#adbbd5]">
+                        <path fill-rule="evenodd"
+                            d="M11.013 2.513a1.75 1.75 0 0 1 2.475 2.474L6.226 12.25a2.751 2.751 0 0 1-.892.596l-2.047.848a.75.75 0 0 1-.98-.98l.848-2.047a2.75 2.75 0 0 1 .596-.892l7.262-7.261Z"
+                            clip-rule="evenodd" />
+                    </svg>
+
+
+
+                </div>
+
+
+            </div>
+
+        </nav>
+    </header>
+    <main>
+        <div id="form1" class="fixed inset-0 bg-black/50 hidden flex items-center justify-center z-50 p-6">
+            <form
+                class=" bg-white h-100 border-2 border-[#adbbd5] flex  justify-center rounded-2xl flex-col gap-5 px-5">
+                <h1 class="font-bold text-2xl ">Bienvenue dans WakeLab</h1>
+                <p class="text-gray-500 text-sm">Ton nom sera affiché comme auteur de tes prochaines propositions.</p>
+                <div class=" flex flex-col gap-2">
+                    <h2 class="font-bold text-sm">Nom complet</h2>
+                    <div class="bg-white border border-[#dedfd9] rounded-md h-9 flex items-center px-3 gap-3">
+                        <input id="user" type="text" class=" outline-none w-full text-[11px] bg-transparent"
+                            placeholder="Ex. Aicha jalloul">
+                        
+                    </div>
+                    <p id="erreur-user" class="text-red-400 text-sm mt-1"></p>
+                </div>
+                <div class="flex flex-col justify-center items-center gap-5">
+                    <button id="btn" class="border bg-[#ecbfa8] rounded-lg text-white w-full h-9 ">
+                        <a href="index.html">Continuer</a>
+                    </button>
+                    <p class="text-gray-500 text-sm">Enregistré uniquement dans ton navigateur.</p>
+                </div>
+
+            </form>
+        </div>
+
+        <section class="bg-[#fdf7f7] py-4 px-5 mx-aut grid grid-cols-[60%_40%]">
+            <div class=" flex flex-col gap-4">
+                <p class="font-bold text-sm text-[#ecbfa8]"> --- Idées à partager</p>
+                <h1 class="font-bold text-4xl">Des activités qui nous
+                    <br><span class="font-bold text-4xl text-[#ecbfa8]">rassemblent.</span>
+                </h1>
+                <p class="text-base">Propose une idée, découvre celles de la communauté et fais naître <br>le prochain
+                    moment collectif.</p>
+                <button id="ajout" class="bg-[#ecbfa8] rounded-lg w-[50%] h-9">+ Proposer une activité</button>
+                <div id="form2" class="fixed inset-0 bg-black/50 hidden flex items-center justify-center z-50 p-6">
+                    <form
+                        class=" bg-white  border-2 border-[#adbbd5] flex  justify-center rounded-2xl flex-col gap-2 px-5 p-3">
+                        <h2 class="font-bold text-2xl">Une idée à partager ?</h2>
+                        <p class="text-gray-500 text-sm">Quelques minutes pour inspirer d’autres formateurs.</p>
+                        <div class="">
+                            <div class="font-semibold text-gray-800 text-base ">
+                                <label>Titre de l’activité *</label>
+
+                                <input id="ajouttitre"
+                                    class="w-full border border-gray-300 rounded-xl px-4 py-4  text-black-400"
+                                    placeholder="Ex. Le portrait chinois">
+                                <p id="erreur-titre" class="text-red-400 text-sm mt-1">
+                                </p>
+
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-6 ">
+                            <div class=" font-semibold text-gray-800 text-base ">
+                                <label>Théme *</label>
+                                <select id="ajoutTheme"
+                                    class=" w-full border border-gray-300 rounded-xl px-4 py-4 bg-white text-black-400 flex items-center justify-between">
+                                    <option value="">Echange</option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+
+                                </select>
+                                <p id="erreur-theme" class="text-red-400 text-sm mt-1">
+                                </p>
+                            </div>
+
+                            <div>
+                                <div class="font-semibold text-gray-800 text-base ">
+                                    <label>Durée (minutes) *</label>
+                                    <input id="ajoutduree" type="datetime"
+                                        class=" w-full border border-gray-300 rounded-xl px-4 py-4 flex items-center justify-between text-black-400">
+                                    <p id="erreur-duree" class="text-red-400 text-sm mt-1">
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="font-semibold text-gray-800 text-base ">
+                            <div>
+                                <label>Description *</label>
+
+                                <input id="ajoutdescription"
+                                    class="w-full border border-gray-300 rounded-xl px-4 py-4  text-black-400"
+                                    placeholder="Chaque participant se présente à travers une image : « Si j’étais une saison, je serais… »">
+                                <p id="erreur-description" class="text-red-400 text-sm mt-1">
+                                </p>
+                            </div>
+                            <p class="text-gray-500 text-xs">1000 caractères maximum</p>
+
+                        </div>
+                        <div class="font-semibold text-gray-800 text-base">
+                            <label>Objectifs *</label>
+
+                            <input id="ajoutobjectifs"
+                                class="w-full border border-gray-300 rounded-xl px-4 py-4  text-black-400"
+                                placeholder="Faire connaissance et encourager la prise de parole">
+                            <p id="erreur-objectifs" class="text-red-400 text-sm mt-1">
+                            </p>
+
+                        </div>
+
+
+
+                        <div class="flex items-center justify-end gap-4 mt-3 m">
+                            <button id="annuler"
+                                class="px-6 py-3 rounded-xl font-semibold border border-gray-300">Annuler</button>
+                            <button id="creer" class="px-6 py-3 rounded-xl font-semibold bg-[#abb9d3] text-gray-900">
+                                + Publier l’activité</button>
+                        </div>
+                    </form>
+
+                </div>
+
+            </div>
+
+            <div>
+                <img src="img/aa0bc4f55d3a02a88073a2b98f3420ed.jpg">
+            </div>
+        </section>
+        <section class="py-4 px-5 mx-aut grid gap-6">
+            <div class="flex justify-between items-center">
+                <div>
+                    <p class="font-bold text-sm text-[#ecbfa8]">À découvrir</p>
+                    <h2 class="font-bold text-xl">Les activités proposées</h2>
+                </div>
+                <div class="flex gap-3">
+                    <div class="flex bg-white border border-[#dedfd9] rounded-md h-9 flex items-center px-3 gap-3">
+                        <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <circle cx="11" cy="11" r="7"></circle>
+                            <path d="m20 20-4-4"></path>
+                        </svg>
+
+                        <input id="rechercher" type="text" placeholder="Rechercher un titre de livre..."
+                            class="outline-none w-full text-[11px] bg-transparent">
+                    </div>
+                    <div>
+                        <select class="border border-[#dedfd9] bg-white rounded-md h-9 px-3">
+                            <option class="">Tous les thèmes</option>
+
+                        </select>
+
+                    </div>
+                </div>
+            </div>
+            <div id="cards" class="grid grid-cols-2 gap-3">
+                <!-- <div class="bg-[#fdf7f7] py-4 px-5 mx-aut border border-[#adbbd5]  rounded-lg  flex flex-col gap-5">
+                    <div class="flex items-center justify-between">
+
+                        <div id="the"></div>
+                        <div id="duree" class="">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                                class="size-4">
+                                <path fill-rule="evenodd"
+                                    d="M1 8a7 7 0 1 1 14 0A7 7 0 0 1 1 8Zm7.75-4.25a.75.75 0 0 0-1.5 0V8c0 .414.336.75.75.75h3.25a.75.75 0 0 0 0-1.5h-2.5v-3.5Z"
+                                    clip-rule="evenodd" />
+                            </svg>
+
+
+                        </div>
+
+                    </div>
+                    <div>
+                        <div id="titre"></div>
+                        <div id="description"></div>
+                    </div>
+                    <div>
+                        <h4 class="font-medium text-base text-[#adbbd5]">OBJECTIF</h4>
+                        <p id="objectifs"></p>
+                    </div>
+                    <div class="flex items-center justify-between border-t pt-3">
+                        <div id="auteur"></div>
+                        <div class="flex items-center gap-6 ">
+                            <svg id="modifi" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                                class="size-4">
+                                <path fill-rule="evenodd"
+                                    d="M11.013 2.513a1.75 1.75 0 0 1 2.475 2.474L6.226 12.25a2.751 2.751 0 0 1-.892.596l-2.047.848a.75.75 0 0 1-.98-.98l.848-2.047a2.75 2.75 0 0 1 .596-.892l7.262-7.261Z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                                class="size-4">
+                                <path fill-rule="evenodd"
+                                    d="M5 3.25V4H2.75a.75.75 0 0 0 0 1.5h.3l.815 8.15A1.5 1.5 0 0 0 5.357 15h5.285a1.5 1.5 0 0 0 1.493-1.35l.815-8.15h.3a.75.75 0 0 0 0-1.5H11v-.75A2.25 2.25 0 0 0 8.75 1h-1.5A2.25 2.25 0 0 0 5 3.25Zm2.25-.75a.75.75 0 0 0-.75.75V4h3v-.75a.75.75 0 0 0-.75-.75h-1.5ZM6.05 6a.75.75 0 0 1 .787.713l.275 5.5a.75.75 0 0 1-1.498.075l-.275-5.5A.75.75 0 0 1 6.05 6Zm3.9 0a.75.75 0 0 1 .712.787l-.275 5.5a.75.75 0 0 1-1.498-.075l.275-5.5a.75.75 0 0 1 .786-.711Z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                    </div> 
+                </div> -->
+            </div>
+        </section>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.21.1/axios.min.js"
+        integrity="sha512-YiweniDPqprdTP7mvKVpKWv3jMGTY9frHzOTmDqbutoqcypYCRo8nfKhhDKnSiXTTMN0kBrDtTozIlM11wqcAg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
